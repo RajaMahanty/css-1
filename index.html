@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>100 Days CSS Challenge</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: "Poppins", sans-serif;
+				background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+				color: #fff;
+				min-height: 100vh;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				padding: 2rem;
+			}
+
+			header {
+				text-align: center;
+				margin-bottom: 2rem;
+			}
+
+			header h1 {
+				font-size: 2.3rem;
+				margin-bottom: 0.5rem;
+				background: linear-gradient(45deg, #00eaff, #7f00ff);
+				background-clip: text;
+				-webkit-background-clip: text;
+				color: transparent;
+				-webkit-text-fill-color: transparent;
+			}
+
+			.projects-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+				gap: 1.2rem;
+				width: 100%;
+				max-width: 900px;
+			}
+
+			.project-card {
+				text-decoration: none;
+				color: #fff;
+				background: rgba(255, 255, 255, 0.05);
+				backdrop-filter: blur(10px);
+				border: 1px solid rgba(255, 255, 255, 0.12);
+				padding: 1.2rem;
+				text-align: center;
+				border-radius: 14px;
+				transition: all 0.2s ease-in-out;
+				font-size: 1.1rem;
+			}
+
+			.project-card:hover {
+				transform: translateY(-5px);
+				background: rgba(255, 255, 255, 0.12);
+				border-color: #00eaff;
+				box-shadow: 0 0 10px rgba(0, 238, 255, 0.6);
+			}
+
+			footer {
+				margin-top: 2.5rem;
+				font-size: 0.9rem;
+				opacity: 0.6;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>100 Days CSS Challenge</h1>
+			<p>Explore every challenge I build day-by-day 💪</p>
+		</header>
+
+		<main class="projects-grid">
+			<a href="./001/index.html" class="project-card">Day 1</a>
+		</main>
+
+		<footer>
+			<p>Made with ❤️ by Raja</p>
+		</footer>
+	</body>
+</html>
