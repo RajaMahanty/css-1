@@ -93,6 +93,7 @@
 
 .info .picinfo {
 	margin-top: 30px;
+	color: var(--mainColor4);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
