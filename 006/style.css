@@ -1,0 +1,169 @@
+* {
+	box-sizing: border-box;
+	font-family: "Open Sans", sans-serif;
+}
+
+:root {
+	--mainColor1: #067fd6;
+	--mainColor2: #2a4d59;
+	--mainColor3: #4cd1f6;
+	--mainColor4: white;
+	--mainColor5: #393939;
+}
+
+.container {
+	background: linear-gradient(to top right, #006d77 0%, #edf6f9 100%);
+	border-radius: 10px;
+	height: 400px;
+	width: 400px;
+	margin: 40px auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.profile {
+	height: 330px;
+	width: 330px;
+	background-color: var(--mainColor5);
+	box-shadow: 5px 5px 10px 1px #00000079;
+	border-radius: 10px;
+	overflow: hidden;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	row-gap: 1px;
+	grid-template-areas:
+		"info info posts"
+		"info info likes"
+		"info info followers";
+}
+
+.info {
+	grid-area: info;
+	background-color: var(--mainColor2);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.info .pic {
+	position: relative;
+	height: 90px;
+	width: 90px;
+	margin-top: 35px;
+	border-radius: 50px;
+	cursor: pointer;
+}
+
+.info .pic::before {
+	content: "";
+	height: 110%;
+	width: 110%;
+	position: absolute;
+	border: 2px solid;
+	border-radius: 55%;
+	border-color: var(--mainColor3) transparent var(--mainColor3)
+		var(--mainColor3);
+	top: -6px;
+	left: -6px;
+	transition: 1s;
+}
+
+.info .pic::after {
+	content: "";
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	border: 2px solid;
+	border-radius: 50%;
+	border-color: var(--mainColor3) transparent var(--mainColor3)
+		var(--mainColor3);
+	top: -1.5px;
+	left: -1.5px;
+	transition: 1s;
+}
+
+.info .pic img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+.info .picinfo {
+	margin-top: 30px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.buttons {
+	margin-top: 20px;
+}
+
+.info button {
+	display: block;
+	height: 35px;
+	width: 150px;
+	margin: 5px;
+	background-color: var(--mainColor2);
+	color: var(--mainColor4);
+	border: var(--mainColor3) 2px solid;
+	border-radius: 50px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+.stats {
+	background-color: var(--mainColor1);
+	color: var(--mainColor4);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+h3,
+h4,
+h5 {
+	margin: 0px;
+}
+
+h5 {
+	font-weight: normal;
+	text-transform: capitalize;
+}
+
+.posts {
+	grid-area: posts;
+}
+
+.likes {
+	grid-area: likes;
+}
+
+.followers {
+	grid-area: followers;
+}
+
+.stats:hover {
+	background-color: var(--mainColor3);
+	color: var(--mainColor5);
+}
+
+button:hover {
+	background-color: var(--mainColor3);
+	color: var(--mainColor5);
+}
+
+.pic:hover::before {
+	transform: rotate(180deg);
+}
+
+.pic:hover::after {
+	transform: rotate(-180deg);
+}
