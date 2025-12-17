@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>100 Days CSS Challenge</title>
+		<title>Steps To Heaven - 100 Days CSS Challenge</title>
 		<style>
 			* {
 				margin: 0;
@@ -30,7 +30,7 @@
 			}
 
 			header h1 {
-				font-size: 3rem;
+				font-size: 2.8rem;
 				margin-bottom: 0.8rem;
 				background: linear-gradient(135deg, #00eaff, #00d4ff, #7f00ff, #ff006e);
 				background-size: 300% 300%;
@@ -44,16 +44,40 @@
 			}
 
 			header p {
-				font-size: 1.1rem;
+				font-size: 1rem;
 				opacity: 0.8;
 				font-weight: 300;
-				letter-spacing: 0.5px;
+			}
+
+			.back-link {
+				position: absolute;
+				top: 2rem;
+				left: 2rem;
+				text-decoration: none;
+				color: #00eaff;
+				font-size: 0.95rem;
+				font-weight: 500;
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+				transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+				padding: 0.5rem 1rem;
+				border-radius: 8px;
+				background: rgba(0, 234, 255, 0.05);
+				border: 1px solid rgba(0, 234, 255, 0.2);
+			}
+
+			.back-link:hover {
+				color: #fff;
+				background: rgba(0, 234, 255, 0.15);
+				border-color: #00eaff;
+				transform: translateX(-5px);
 			}
 
 			.projects-grid {
 				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-				gap: 2rem;
+				grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+				gap: 1.5rem;
 				width: 100%;
 				max-width: 1000px;
 				animation: fadeInUp 1s ease-out 0.2s backwards;
@@ -65,11 +89,11 @@
 				background: rgba(255, 255, 255, 0.08);
 				backdrop-filter: blur(20px);
 				border: 1.5px solid rgba(255, 255, 255, 0.2);
-				padding: 2rem 1.5rem;
+				padding: 1.8rem 1.2rem;
 				text-align: center;
-				border-radius: 20px;
+				border-radius: 16px;
 				transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-				font-size: 1.2rem;
+				font-size: 1.05rem;
 				font-weight: 600;
 				box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 				position: relative;
@@ -97,11 +121,11 @@
 			}
 
 			.project-card:hover {
-				transform: translateY(-10px) scale(1.05);
+				transform: translateY(-8px) scale(1.05);
 				background: rgba(0, 234, 255, 0.15);
 				border-color: #00eaff;
-				box-shadow: 0 20px 40px rgba(0, 234, 255, 0.4),
-					0 0 20px rgba(127, 0, 255, 0.3);
+				box-shadow: 0 15px 35px rgba(0, 234, 255, 0.4),
+					0 0 15px rgba(127, 0, 255, 0.3);
 			}
 
 			footer {
@@ -152,16 +176,23 @@
 		</style>
 	</head>
 	<body>
+		<a href="../index.html" class="back-link">← Back</a>
+
 		<header>
-			<h1>The Royale Creationalism</h1>
-			<p>Daily CSS projects & creative experiments 🎨</p>
+			<h1>Steps To Heaven</h1>
+			<p>CSS Challenges Day by Day 🚀</p>
 		</header>
 
 		<main class="projects-grid">
-			<a href="./steps-to-heaven/index.html" class="project-card"
-				>Steps To Heaven</a
-			>
-			<a href="./glass-castle/index.html" class="project-card">Glass Castle</a>
+			<a href="./001/index.html" class="project-card">Day 1</a>
+			<a href="./002/index.html" class="project-card">Day 2</a>
+			<a href="./003/index.html" class="project-card">Day 3</a>
+			<a href="./004/index.html" class="project-card">Day 4</a>
+			<a href="./005/index.html" class="project-card">Day 5</a>
+			<a href="./006/index.html" class="project-card">Day 6</a>
+			<a href="./007/index.html" class="project-card">Day 7</a>
+			<a href="./008/index.html" class="project-card">Day 8</a>
+			<a href="./009/index.html" class="project-card">Day 9</a>
 		</main>
 
 		<footer>
