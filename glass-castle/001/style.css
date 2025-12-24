@@ -21,7 +21,7 @@ section {
 
 section .color {
 	position: absolute;
-	filter: blur(180px);
+	filter: blur(200px);
 }
 
 section .color:nth-child(1) {
