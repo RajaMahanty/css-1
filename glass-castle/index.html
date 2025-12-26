@@ -12,132 +12,162 @@
 			}
 
 			body {
-				font-family: "Poppins", sans-serif;
-				background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-				color: #fff;
 				min-height: 100vh;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				padding: 3rem 2rem;
+				font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 				overflow-x: hidden;
-			}
-
-			header {
-				text-align: center;
-				margin-bottom: 3.5rem;
-				animation: fadeInDown 0.8s ease-out;
-			}
-
-			header h1 {
-				font-size: 2.8rem;
-				margin-bottom: 0.8rem;
-				background: linear-gradient(135deg, #00eaff, #00d4ff, #7f00ff, #ff006e);
-				background-size: 300% 300%;
-				background-clip: text;
-				-webkit-background-clip: text;
-				color: transparent;
-				-webkit-text-fill-color: transparent;
-				font-weight: 800;
-				letter-spacing: 1px;
-				animation: gradientShift 8s ease infinite;
-			}
-
-			header p {
-				font-size: 1rem;
-				opacity: 0.8;
-				font-weight: 300;
-			}
-
-			.back-link {
-				position: absolute;
-				top: 2rem;
-				left: 2rem;
-				text-decoration: none;
-				color: #00eaff;
-				font-size: 0.95rem;
-				font-weight: 500;
-				display: flex;
-				align-items: center;
-				gap: 0.5rem;
-				transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-				padding: 0.5rem 1rem;
-				border-radius: 8px;
-				background: rgba(0, 234, 255, 0.05);
-				border: 1px solid rgba(0, 234, 255, 0.2);
-			}
-
-			.back-link:hover {
-				color: #fff;
-				background: rgba(0, 234, 255, 0.15);
-				border-color: #00eaff;
-				transform: translateX(-5px);
-			}
-
-			.projects-grid {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-				gap: 1.5rem;
-				width: 100%;
-				max-width: 1000px;
-				animation: fadeInUp 1s ease-out 0.2s backwards;
-			}
-
-			.project-card {
-				text-decoration: none;
-				color: #fff;
-				background: rgba(255, 255, 255, 0.08);
-				backdrop-filter: blur(20px);
-				border: 1.5px solid rgba(255, 255, 255, 0.2);
-				padding: 1.8rem 1.2rem;
-				text-align: center;
-				border-radius: 16px;
-				transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-				font-size: 1.05rem;
-				font-weight: 600;
-				box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 				position: relative;
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			}
+
+			/* Animated background blobs */
+			.background {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 0;
 				overflow: hidden;
 			}
 
-			.project-card::before {
-				content: "";
+			.blob {
 				position: absolute;
+				border-radius: 50%;
+				filter: blur(10px);
+				opacity: 0.7;
+				animation: float 20s infinite ease-in-out;
+			}
+
+			.blob:nth-child(1) {
+				width: 300px;
+				height: 300px;
+				background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+				top: 10%;
+				left: 10%;
+				animation-delay: 0s;
+			}
+
+			.blob:nth-child(2) {
+				width: 400px;
+				height: 400px;
+				background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+				top: 60%;
+				left: 70%;
+				animation-delay: -5s;
+			}
+
+			.blob:nth-child(3) {
+				width: 350px;
+				height: 350px;
+				background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+				top: 40%;
+				left: 20%;
+				animation-delay: -10s;
+			}
+
+			.blob:nth-child(4) {
+				width: 250px;
+				height: 250px;
+				background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+				top: 20%;
+				left: 80%;
+				animation-delay: -15s;
+			}
+
+			.blob:nth-child(5) {
+				width: 320px;
+				height: 320px;
+				background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+				top: 70%;
+				left: 10%;
+				animation-delay: -7s;
+			}
+
+			.blob:nth-child(6) {
+				width: 280px;
+				height: 280px;
+				background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+				top: 15%;
+				left: 45%;
+				animation-delay: -12s;
+			}
+
+			.blob:nth-child(7) {
+				width: 360px;
+				height: 360px;
+				background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+				top: 80%;
+				left: 50%;
+				animation-delay: -3s;
+			}
+
+			@keyframes float {
+				0%,
+				100% {
+					transform: translate(0, 0) scale(1);
+				}
+				33% {
+					transform: translate(50px, -50px) scale(1.1);
+				}
+				66% {
+					transform: translate(-30px, 30px) scale(0.9);
+				}
+			}
+
+			/* Glassmorphism blur overlay */
+			.glass-overlay {
+				position: fixed;
 				top: 0;
-				left: -100%;
+				left: 0;
 				width: 100%;
 				height: 100%;
-				background: linear-gradient(
-					90deg,
-					transparent,
-					rgba(255, 255, 255, 0.2),
-					transparent
-				);
-				transition: left 0.5s;
+				z-index: 1;
+				pointer-events: none;
 			}
 
-			.project-card:hover::before {
-				left: 100%;
+			/* Content styling */
+			.back-link {
+				position: relative;
+				z-index: 10;
+				display: inline-block;
+				margin: 20px;
+				padding: 12px 24px;
+				color: white;
+				text-decoration: none;
+				font-size: 16px;
+				font-weight: 500;
+				background: rgba(255, 255, 255, 0.1);
+				backdrop-filter: blur(10px);
+				border-radius: 12px;
+				border: 1px solid rgba(255, 255, 255, 0.2);
+				transition: all 0.3s ease;
 			}
 
-			.project-card:hover {
-				transform: translateY(-8px) scale(1.05);
-				background: rgba(0, 234, 255, 0.15);
-				border-color: #00eaff;
-				box-shadow: 0 15px 35px rgba(0, 234, 255, 0.4),
-					0 0 15px rgba(127, 0, 255, 0.3);
+			.back-link:hover {
+				background: rgba(255, 255, 255, 0.2);
+				transform: translateY(-2px);
+				box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 			}
 
-			footer {
-				margin-top: 4rem;
-				font-size: 0.95rem;
-				opacity: 0.7;
-				font-weight: 300;
-				transition: opacity 0.3s ease;
+			header {
+				position: relative;
+				z-index: 10;
+				text-align: center;
+				padding: 60px 20px 40px;
+				color: white;
 			}
 
-			footer:hover {
-				opacity: 1;
+			header h1 {
+				font-size: 3.5rem;
+				margin-bottom: 10px;
+				text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+				animation: fadeInDown 1s ease;
+			}
+
+			header p {
+				font-size: 1.3rem;
+				opacity: 0.9;
+				animation: fadeInUp 1s ease;
 			}
 
 			@keyframes fadeInDown {
@@ -157,25 +187,94 @@
 					transform: translateY(30px);
 				}
 				to {
-					opacity: 1;
+					opacity: 0.9;
 					transform: translateY(0);
 				}
 			}
 
-			@keyframes gradientShift {
-				0% {
-					background-position: 0% 50%;
-				}
-				50% {
-					background-position: 100% 50%;
-				}
-				100% {
-					background-position: 0% 50%;
-				}
+			main {
+				position: relative;
+				z-index: 10;
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 40px 20px;
+			}
+
+			.projects-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+				gap: 30px;
+				padding: 20px;
+			}
+
+			.project-card {
+				position: relative;
+				padding: 60px 30px;
+				text-align: center;
+				color: white;
+				text-decoration: none;
+				font-size: 1.5rem;
+				font-weight: 600;
+				background: rgba(255, 255, 255, 0.1);
+				backdrop-filter: blur(10px);
+				border-radius: 20px;
+				border: 1px solid rgba(255, 255, 255, 0.2);
+				transition: all 0.3s ease;
+				cursor: pointer;
+				overflow: hidden;
+			}
+
+			.project-card::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: linear-gradient(
+					135deg,
+					rgba(255, 255, 255, 0.1),
+					rgba(255, 255, 255, 0.05)
+				);
+				opacity: 0;
+				transition: opacity 0.3s ease;
+			}
+
+			.project-card:hover {
+				transform: translateY(-10px);
+				background: rgba(255, 255, 255, 0.15);
+				box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+			}
+
+			.project-card:hover::before {
+				opacity: 1;
+			}
+
+			footer {
+				position: relative;
+				z-index: 10;
+				text-align: center;
+				padding: 40px 20px;
+				color: white;
+				font-size: 1rem;
+				opacity: 0.8;
 			}
 		</style>
 	</head>
 	<body>
+		<!-- Animated background blobs -->
+		<div class="background">
+			<div class="blob"></div>
+			<div class="blob"></div>
+			<div class="blob"></div>
+			<div class="blob"></div>
+			<div class="blob"></div>
+			<div class="blob"></div>
+			<div class="blob"></div>
+		</div>
+
+		<!-- Glass overlay for additional blur -->
+		<div class="glass-overlay"></div>
 		<a href="../index.html" class="back-link">← Back</a>
 
 		<header>
@@ -186,7 +285,7 @@
 		<main class="projects-grid">
 			<a href="./001/index.html" class="project-card">Glass Login</a>
 			<a href="./002/index.html" class="project-card">Glass Button</a>
-			<a href="./003/index.html" class="project-card">Glass Button</a>
+			<a href="./003/index.html" class="project-card">Glass Calculator</a>
 		</main>
 
 		<footer>
