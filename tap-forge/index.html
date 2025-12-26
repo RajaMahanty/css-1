@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>👆🏻 Tap Forge</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: "Poppins", sans-serif;
+				background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+				color: #fff;
+				min-height: 100vh;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				padding: 3rem 2rem;
+				overflow-x: hidden;
+			}
+
+			.back-link {
+				position: absolute;
+				top: 2rem;
+				left: 2rem;
+				text-decoration: none;
+				color: #e94560;
+				font-size: 0.95rem;
+				font-weight: 500;
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+				transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+				padding: 0.5rem 1rem;
+				border-radius: 8px;
+				background: rgba(233, 69, 96, 0.1);
+				border: 1px solid rgba(233, 69, 96, 0.3);
+			}
+
+			.back-link:hover {
+				color: #fff;
+				background: rgba(233, 69, 96, 0.2);
+				border-color: #e94560;
+				transform: translateX(-5px);
+			}
+
+			header {
+				text-align: center;
+				margin-bottom: 3.5rem;
+				animation: fadeInDown 0.8s ease-out;
+			}
+
+			header h1 {
+				font-size: 2.8rem;
+				margin-bottom: 0.8rem;
+				background: linear-gradient(135deg, #e94560, #f39c12, #e74c3c);
+				background-size: 300% 300%;
+				background-clip: text;
+				-webkit-background-clip: text;
+				color: transparent;
+				-webkit-text-fill-color: transparent;
+				font-weight: 800;
+				letter-spacing: 1px;
+				animation: gradientShift 8s ease infinite;
+			}
+
+			header p {
+				font-size: 1rem;
+				opacity: 0.8;
+				font-weight: 300;
+			}
+
+			.projects-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: 2rem;
+				width: 100%;
+				max-width: 1200px;
+				animation: fadeInUp 1s ease-out 0.2s backwards;
+			}
+
+			.design-card {
+				text-decoration: none;
+				color: #fff;
+				background: rgba(255, 255, 255, 0.08);
+				backdrop-filter: blur(20px);
+				border: 1.5px solid rgba(233, 69, 96, 0.3);
+				padding: 2rem;
+				border-radius: 16px;
+				transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+				box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+				position: relative;
+				overflow: hidden;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 1.5rem;
+			}
+
+			.design-preview {
+				width: 100%;
+				height: 120px;
+				background: linear-gradient(
+					135deg,
+					rgba(233, 69, 96, 0.2),
+					rgba(243, 156, 18, 0.2)
+				);
+				border: 2px dashed rgba(233, 69, 96, 0.5);
+				border-radius: 12px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 2.5rem;
+				font-weight: 700;
+				color: rgba(233, 69, 96, 0.6);
+				transition: all 0.3s ease;
+			}
+
+			.design-card h3 {
+				font-size: 1.1rem;
+				font-weight: 600;
+				text-align: center;
+				transition: all 0.3s ease;
+			}
+
+			.design-card::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: linear-gradient(
+						45deg,
+						transparent 30%,
+						rgba(233, 69, 96, 0.3) 50%,
+						transparent 70%
+					),
+					linear-gradient(
+						-45deg,
+						transparent 30%,
+						rgba(243, 156, 18, 0.3) 50%,
+						transparent 70%
+					);
+				background-size: 200% 200%;
+				border-radius: 16px;
+				opacity: 0;
+				transition: opacity 0.4s ease;
+			}
+
+			.design-card::after {
+				content: "";
+				position: absolute;
+				top: -50%;
+				left: -50%;
+				width: 200%;
+				height: 200%;
+				background: conic-gradient(from 0deg, #e94560, #f39c12, #e94560);
+				opacity: 0;
+				transition: opacity 0.6s ease;
+			}
+
+			.design-card:hover::before {
+				opacity: 1;
+				animation: diagonalShift 1.5s ease-in-out infinite;
+			}
+
+			.design-card:hover::after {
+				opacity: 0.15;
+				animation: spinGlow 3s linear infinite;
+			}
+			.design-card:hover {
+				transform: translateY(-12px) rotateX(5deg) rotateY(-5deg);
+				background: rgba(233, 69, 96, 0.15);
+				border-color: #e94560;
+				box-shadow: 0 20px 40px rgba(233, 69, 96, 0.4),
+					0 0 20px rgba(243, 156, 18, 0.3),
+					inset 0 1px 0 rgba(255, 255, 255, 0.1);
+			}
+
+			.design-card:hover .design-preview {
+				background: linear-gradient(
+					135deg,
+					rgba(233, 69, 96, 0.4),
+					rgba(243, 156, 18, 0.4)
+				);
+				border-color: #e94560;
+				color: #e94560;
+				transform: scale(1.1) rotate(2deg);
+				box-shadow: 0 8px 16px rgba(233, 69, 96, 0.3);
+			}
+
+			.design-card:hover h3 {
+				color: #f39c12;
+				transform: translateY(-5px);
+				text-shadow: 0 0 10px rgba(243, 156, 18, 0.5);
+			}
+
+			footer {
+				margin-top: 4rem;
+				font-size: 0.95rem;
+				opacity: 0.7;
+				font-weight: 300;
+				transition: opacity 0.3s ease;
+			}
+
+			footer:hover {
+				opacity: 1;
+			}
+
+			@keyframes fadeInDown {
+				from {
+					opacity: 0;
+					transform: translateY(-30px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			@keyframes fadeInUp {
+				from {
+					opacity: 0;
+					transform: translateY(30px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			@keyframes gradientShift {
+				0% {
+					background-position: 0% 50%;
+				}
+				50% {
+					background-position: 100% 50%;
+				}
+				100% {
+					background-position: 0% 50%;
+				}
+			}
+
+			@keyframes diagonalShift {
+				0% {
+					background-position: 0% 0%;
+				}
+				50% {
+					background-position: 100% 100%;
+				}
+				100% {
+					background-position: 0% 0%;
+				}
+			}
+
+			@keyframes spinGlow {
+				0% {
+					transform: rotate(0deg);
+				}
+				100% {
+					transform: rotate(360deg);
+				}
+			} /* Responsive design */
+			@media (max-width: 768px) {
+				header h1 {
+					font-size: 2rem;
+				}
+
+				.projects-grid {
+					grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+					gap: 1rem;
+				}
+
+				.project-card {
+					padding: 1.5rem 1rem;
+					font-size: 0.9rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<a href="../index.html" class="back-link">← Back</a>
+
+		<header>
+			<h1>Tap Forge</h1>
+			<p>Button Design Experiments 🔨</p>
+		</header>
+
+		<main class="projects-grid">
+			<!-- Button design projects -->
+			<a href="./001/index.html" class="design-card">
+				<div class="design-preview">01</div>
+				<h3>COMING SOON</h3>
+			</a>
+			<a href="#" class="design-card">
+				<div class="design-preview">02</div>
+				<h3>COMING SOON</h3>
+			</a>
+			<a href="#" class="design-card">
+				<div class="design-preview">03</div>
+				<h3>COMING SOON</h3>
+			</a>
+			<a href="#" class="design-card">
+				<div class="design-preview">04</div>
+				<h3>COMING SOON</h3>
+			</a>
+			<a href="#" class="design-card">
+				<div class="design-preview">05</div>
+				<h3>COMING SOON</h3>
+			</a>
+		</main>
+
+		<footer>
+			<p>Made with ❤️ by Raja</p>
+		</footer>
+	</body>
+</html>
