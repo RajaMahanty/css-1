@@ -114,17 +114,6 @@
 				}
 			}
 
-			/* Glassmorphism blur overlay */
-			.glass-overlay {
-				position: fixed;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				z-index: 1;
-				pointer-events: none;
-			}
-
 			/* Content styling */
 			.back-link {
 				position: relative;
@@ -144,9 +133,9 @@
 			}
 
 			.back-link:hover {
-				background: rgba(255, 255, 255, 0.2);
-				transform: translateY(-2px);
-				box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+				background: rgba(255, 255, 255, 0.25);
+				transform: scale(1.05);
+				box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
 			}
 
 			header {
@@ -241,9 +230,9 @@
 			}
 
 			.project-card:hover {
-				transform: translateY(-10px);
-				background: rgba(255, 255, 255, 0.15);
-				box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+				background: rgba(255, 255, 255, 0.25);
+				transform: scale(1.05);
+				box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
 			}
 
 			.project-card:hover::before {
@@ -286,6 +275,7 @@
 			<a href="./001/index.html" class="project-card">Glass Login</a>
 			<a href="./002/index.html" class="project-card">Glass Button</a>
 			<a href="./003/index.html" class="project-card">Glass Calculator</a>
+			<a href="./004/index.html" class="project-card">Pocket Socials</a>
 		</main>
 
 		<footer>
