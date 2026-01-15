@@ -1,0 +1,172 @@
+@font-face {
+	font-family: "Gilroy-Bold";
+	font-style: normal;
+	font-weight: 700;
+	src: local("Gilroy-Bold"),
+		url("../../fonts/Gilroy/Gilroy-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Gilroy-Heavy";
+	font-style: normal;
+	font-weight: 900;
+	src: local("Gilroy-Heavy"),
+		url("../../fonts/Gilroy/Gilroy-Heavy.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Gilroy-Light";
+	font-style: normal;
+	font-weight: 300;
+	src: local("Gilroy-Light"),
+		url("../../fonts/Gilroy/Gilroy-Light.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Gilroy-Medium";
+	font-style: normal;
+	font-weight: 500;
+	src: local("Gilroy-Medium"),
+		url("../../fonts/Gilroy/Gilroy-Medium.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Gilroy-Regular";
+	font-style: normal;
+	font-weight: 400;
+	src: local("Gilroy-Regular"),
+		url("../../fonts/Gilroy/Gilroy-Regular.woff") format("woff");
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Gilroy-Regular;
+}
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+}
+
+main {
+	height: 100%;
+	width: 100%;
+	background-color: white;
+}
+
+nav {
+	height: 100px;
+	width: 100%;
+	/* background-color: blueviolet; */
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 40px;
+}
+
+nav h3 {
+	font-size: 17px;
+	border: 1.5px solid #000;
+	font-weight: 500;
+	padding: 5px 10px;
+	border-radius: 50px;
+}
+
+nav i {
+	font-size: 17px;
+	border: 1.5px solid #000;
+	font-weight: 500;
+	padding: 5px 8px;
+	border-radius: 50px;
+}
+
+nav h1 {
+	font-weight: 700;
+	font-size: 22px;
+	text-transform: uppercase;
+}
+
+nav button {
+	padding: 7px 12px;
+	border-radius: 50px;
+	border: 1.5px solid black;
+	font-size: 17px;
+	font-weight: 600;
+	cursor: pointer;
+	background-color: white;
+}
+
+#btn2 {
+	background-color: orangered;
+	color: white;
+	border: none;
+}
+
+#nav-left {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+main > h1 {
+	font-size: 180px;
+	text-transform: uppercase;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	text-align: center;
+}
+
+img {
+	height: 500px;
+	width: 400px;
+	object-fit: cover;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	border-radius: 20px;
+	transform: translate(-50%, -50%);
+}
+
+#img1 {
+	transform: translate(-50%, -50%) rotate(-30deg);
+}
+
+#img2 {
+	transform: translate(-50%, -50%) rotate(-20deg);
+}
+
+#img3 {
+	transform: translate(-50%, -50%) rotate(-10deg);
+}
+
+#btm-left {
+	position: absolute;
+	left: 2%;
+	bottom: 5%;
+	font-size: 17px;
+}
+
+#btm-right {
+	position: absolute;
+	right: 2%;
+	bottom: 5%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+
+#btm-right-top {
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+	gap: 20px;
+	font-size: 25px;
+}
