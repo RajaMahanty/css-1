@@ -5,18 +5,57 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: Inter, sans-serif;
-	color: #1e1e21;
+	/* color: #1e1e21; */
 }
 
 html,
 body {
 	height: 100%;
 	width: 100%;
+	background-color: #f5f3ef;
 }
 
 main {
 	height: 100%;
 	width: 100%;
+}
+
+/* ##################################################################### */
+/* ########################### NAVBAR SECTION ########################## */
+/* ##################################################################### */
+
+nav {
+	z-index: 100;
+	position: fixed;
+	width: 100%;
+	margin-left: auto;
+	/* background-color: rebeccapurple; */
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding: 32px 32px;
+	padding-bottom: 0;
+	gap: 10px;
+}
+
+nav > h4 {
+	color: #f5f3ef;
+	text-align: center;
+	cursor: pointer;
+	background-color: #1e1e21;
+	border: 2px solid #1e1e21;
+	border-radius: 500px;
+	justify-content: center;
+	padding: 1rem 1.5rem;
+	font-family: Inter, sans-serif;
+	font-size: 1.25rem;
+	font-weight: 600;
+	line-height: 110%;
+	transition: border-color 0.2s, color 0.2s, background-color 0.2s;
+}
+
+.circle {
+	padding: 15px 20px;
 }
 
 /* ##################################################################### */
@@ -27,7 +66,7 @@ main {
 	width: 100%;
 	padding-left: 4rem;
 	padding-right: 4rem;
-	background-color: #f5f3ef;
+	/* background-color: #f5f3ef; */
 }
 
 #heroine > h1 {
@@ -115,4 +154,57 @@ main {
 	bottom: 0%;
 	left: 0%;
 	right: 0%;
+}
+
+/* ##################################################################### */
+/* ########################### ABOUT SECTION ########################### */
+/* ##################################################################### */
+
+#about {
+	height: 45%;
+	width: 100%;
+	background-color: #f5f3ef;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 50px 60px;
+}
+
+#about h2 {
+	width: 65%;
+	font-size: 5.5rem;
+	font-weight: 600;
+	line-height: 100%;
+	/* letter-spacing: -2px; */
+}
+
+#about-part2 {
+	width: 35%;
+	height: 100%;
+	border-left: 2px solid #1e1e21;
+	padding: 0 4rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+#about-part2 h3 {
+	font-size: 2rem;
+	letter-spacing: -0.5px;
+	font-weight: 600;
+	line-height: 120%;
+}
+
+#icons i {
+	background-color: #1e1e21;
+	color: #f5f3ef;
+	padding: 10px;
+	font-size: 27px;
+	border-radius: 50px;
+	margin-right: 10px;
+}
+
+.horizontal-line {
+	margin: 3rem 4rem;
+	border-bottom: 2px solid #1e1e21;
 }
