@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Inter, sans-serif;
+	color: #1e1e21;
+}
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+}
+
+main {
+	height: 100%;
+	width: 100%;
+}
+
+/* ##################################################################### */
+/* ############################ HERO SECTION ########################### */
+/* ##################################################################### */
+
+#heroine {
+	width: 100%;
+	padding-left: 4rem;
+	padding-right: 4rem;
+	background-color: #f5f3ef;
+}
+
+#heroine > h1 {
+	font-size: 9rem;
+	color: #1e1e21;
+	letter-spacing: -7px;
+	font-family: Inter, sans-serif;
+	font-weight: 600;
+	line-height: 100%;
+	padding-top: 0.5em;
+	margin-bottom: 1rem;
+}
+
+.place {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 3rem;
+}
+
+.place > h3 {
+	font-size: 2rem;
+	letter-spacing: -0.5px;
+	font-family: Inter, sans-serif;
+	font-weight: 600;
+	line-height: 120%;
+}
+
+.place-right {
+	grid-column-gap: 0.5rem;
+	grid-row-gap: 0.5rem;
+	flex-wrap: nowrap;
+	align-items: center;
+	padding-left: 0;
+	text-decoration: none;
+	list-style-type: none;
+	display: flex;
+}
+
+.place-right > svg {
+	width: 40px;
+	height: 40px;
+	overflow: hidden;
+}
+
+.place-right > h4 {
+	font-size: 2rem;
+}
+
+/* ##################################################################### */
+/* ######################### HERO IMAGE SECTION ######################## */
+/* ##################################################################### */
+
+#heroine-image {
+	max-height: 1000px;
+	height: 90vh;
+	position: relative;
+	overflow: hidden;
+}
+
+.heroine-image-wrapper {
+	width: 100%;
+	height: 100%;
+}
+
+.heroine-image-wrapper > img {
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+.image-noise {
+	z-index: 2;
+	opacity: 0.5;
+	background-image: url(https://assets-global.website-files.com/64589fb989b2b33c593db89d/64589fb989b2b317fa3db955_noise.png);
+	background-position: 0 0;
+	background-size: 150px 150px;
+	position: absolute;
+	top: 0%;
+	bottom: 0%;
+	left: 0%;
+	right: 0%;
+}
