@@ -51,7 +51,10 @@ nav > h4 {
 	font-size: 1.25rem;
 	font-weight: 600;
 	line-height: 110%;
-	transition: border-color 0.2s, color 0.2s, background-color 0.2s;
+	transition:
+		border-color 0.2s,
+		color 0.2s,
+		background-color 0.2s;
 }
 
 .circle {
@@ -172,10 +175,10 @@ nav > h4 {
 
 #about h2 {
 	width: 65%;
-	font-size: 5.5rem;
+	font-size: 5.7rem;
 	font-weight: 600;
 	line-height: 100%;
-	/* letter-spacing: -2px; */
+	padding-right: 4rem;
 }
 
 #about-part2 {
@@ -207,4 +210,116 @@ nav > h4 {
 .horizontal-line {
 	margin: 3rem 4rem;
 	border-bottom: 2px solid #1e1e21;
+}
+
+/* ##################################################################### */
+/* ############################ WORK SECTION ########################### */
+/* ##################################################################### */
+
+#work {
+	height: 45%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 3.125rem 4rem;
+	padding-top: 0;
+}
+
+#work1 {
+	width: 35%;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	border-right: 2px solid #1e1e21;
+	padding-right: 4rem;
+}
+
+#work1 > h3 {
+	font-size: 2rem;
+	letter-spacing: -0.5px;
+	font-family: Inter, sans-serif;
+	font-weight: 600;
+	line-height: 120%;
+}
+
+#work1 > svg {
+	width: 40px;
+	height: 40px;
+	line-height: 100%;
+	color: #1e1e21;
+}
+
+#work2 {
+	width: 65%;
+	height: 100%;
+	padding: 0 4rem;
+	padding-right: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.work2-part {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 3.125rem 0;
+}
+
+.work2-part:nth-child(1) {
+	border-bottom: 2px solid #1e1e21;
+}
+
+.work2-part > .elem {
+	width: 50%;
+	height: 100%;
+}
+
+.elem {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	gap: 5px;
+}
+
+.elem > h4 {
+	font-size: 2.75rem;
+	letter-spacing: -1px;
+	font-family: Inter, sans-serif;
+	font-weight: 600;
+	line-height: 110%;
+}
+
+.elem > p {
+	color: rgba(30, 30, 33, 0.7);
+	font-family: Inter, sans-serif;
+	font-size: 1.125rem;
+	font-weight: 500;
+	line-height: 160%;
+}
+
+.work2-part > .elem:nth-child(1) {
+	border-right: 2px solid #1e1e21;
+	padding-right: 4rem;
+}
+
+.work2-part > .elem:nth-child(2) {
+	padding-left: 4rem;
+}
+
+/* ##################################################################### */
+/* ######################### WORK STRIP SECTION ######################## */
+/* ##################################################################### */
+
+#work-strip {
+	padding-top: 3rem;
+}
+
+#work-strip h2 {
+	font-size: 10rem;
+	letter-spacing: -7px;
+	font-family: Inter, sans-serif;
+	font-weight: 600;
+	line-height: 90%;
 }
