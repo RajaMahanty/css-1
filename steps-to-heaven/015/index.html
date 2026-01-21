@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Day 15</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<section>
+			<h2>Frosted Glass</h2>
+			<div class="glass" aria-label="Interactive frosted glass effect that follows mouse movement"></div>
+		</section>
+
+		<script>
+			const glass = document.querySelector(".glass");
+			let ticking = false;
+
+			document.addEventListener("mousemove", (e) => {
+				if (!ticking) {
+					requestAnimationFrame(() => {
+						glass.style.left = e.offsetX + "px";
+						glass.style.top = e.offsetY + "px";
+						ticking = false;
+					});
+					ticking = true;
+				}
+			});
+		</script>
+	</body>
+</html>
